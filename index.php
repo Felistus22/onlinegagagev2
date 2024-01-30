@@ -7,7 +7,9 @@ require('./dbconnect.php');
 
 /*
 check if the button is clicked or if the form is submitted
-$_POST['submit'] is set when a form with a asubmit button named 'submit' is posted
+$_POST['submit'] is a variable that holds the value of the submit button when the form is submitted using the POST method and is set when the form is submitted
+isset() finction checks whether the $_POST['submit'] variable is set or not. 
+if the form is submitted, the variable is set and v/v
 */
 if (isset($_POST['submit'])) {
     //declare variables and assign them values from the form fields
@@ -15,15 +17,21 @@ if (isset($_POST['submit'])) {
     $fullname = $_POST['fullname'];
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $telephone = $_POST['fullname'];
+    $telephone = $_POST['telephone'];
     $password = $_POST['password'];
     $usertype = $_POST['usertype'];
 
     //the sql variable contains an SQL query that inserts the form data into the user table 
     $sql = "INSERT INTO user (fullname, username, email, telephone, password, usertype) VALUES ('$fullname', '$username', '$email', '$telephone', '$password', '$usertype')";
 
-    //confirm that the values were inserted
-    if ($conn->query($sql) === TRUE) {
+    /*confirm that the values were inserted
+    mysqli_query() is a method that executes a query using the database connection
+    takes 2 parameters: $conn a database connection and $sql a query
+    if the query was successful, the result is TRUE, else FALSE
+    */
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
         echo 'users added succesfully';
     } else {
         echo 'there was an error' . mysqli_error($conn);
