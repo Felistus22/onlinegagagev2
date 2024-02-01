@@ -1,0 +1,145 @@
+.colorrs{
+    color: #393f49 #d66924 #3f4652 #8b8b8b;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+h1{
+    font-size: 42px;
+    line-height: 60px;
+    color: #222;
+}
+h2{
+    font-size: 36px;
+    line-height: 60px;
+    color: #222;
+}
+h4{
+    font-size: 20px;
+    color: #222;
+}
+h6{
+    font-size: 12px;
+    font-weight: 700;
+}
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+button.normal{
+    height: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #fff;
+    background-color: #a56435;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+button.white{
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #fff;
+    outline: none;
+    transition: 0.2s;
+}
+body{
+    width: 100%;
+}
+/*index page styling*/
+#indexpage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.index{
+    min-height: 85vh;
+    width: 60%;
+    margin: 10px;
+    padding: 20px;
+    background: #3f4652;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.index .logo{
+    height: 90%;
+}
+.index .logo img{
+    width: 95%;
+    height: 100%;
+    align-items: start;
+}
+.index .formcontainer{
+    margin-right: 20px;
+    width: 47%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    background-color: #414957;
+    border-radius: 10px;
+}
+.index .formcontainer .buttoncontainer{
+    /**/
+    margin: 0 0 -10px 20px;
+}
+.formcontainer .buttoncontainer button{
+    background-color: transparent;
+    border: 1px solid #a56435;
+    border-radius: 30px;
+    padding-top: 12px;
+}
+.formcontainer .buttoncontainer button:hover{
+    background-color: #d66924;
+    transition: ease-in-out;
+}
+.formcontainer #registerForm, #loginForm{
+    margin-left: 30px;
+}
+#loginForm{
+    margin-top: -55px;
+}
+form input, select{
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #a56435;
+    outline: none;
+    margin-bottom: 3px;
+    padding: 2px 3px;
+    color: #8b8b8b;
+    border-radius: 13px;
+}
+form input#submit{
+    background-color: transparent;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 5px;
+}
+form input#submit:hover{
+    background-color: #d66924;
+    transition: ease-in-out;
+}
+.hidden{
+    display: none;
+}
+.block{
+    display: block;
+}
