@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    Hello guys!!!!!!!1
+    Hello guys!!!!!!!
+    <section>
+        <div>
+            nav bar
+        </div>
+    </section>
 </body>
 </html>

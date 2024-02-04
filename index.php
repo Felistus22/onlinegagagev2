@@ -38,9 +38,25 @@ if (isset($_POST['submit'])) {
 
 //script for login
 if (isset($_POST['login'])){
+    //getting the form data
     $email = $_POST['email'];
     $password = $_POST['password'];
     $usertype = $_POST['usertype'];
+   /*
+   // Create a prepared statement
+   //mysqli_prepeare() function is used to prepare an SQL statement for execution. The statement template can include one or more placeholders (like ?) that will be filled in later using mysqli_stmt_bind_param(). This provides protection against SQL injection attacks.
+    $stmt = mysqli_prepare($conn, "SELECT * FROM user WHERE email = ? AND password = ? AND usertype = ? ");
+
+    // Bind the parameter to the statement
+    mysqli_stmt_bind_param($stmt, "sss", $email, $password, $usertype);
+
+    // Execute the statement
+    //with this function you execute a prepared statement (i.e., a statement that has been prepared with mysqli_prepare() and bound with mysqli_stmt_bind_param()).
+    mysqli_stmt_execute($stmt);
+
+    // Get the result from the stmt
+    $reslt = mysqli_stmt_get_result($stmt);
+    */
 
     $stmt = "SELECT * FROM user WHERE email = '$email' AND password = '$password' AND usertype = '$usertype'";
 
@@ -58,7 +74,7 @@ if (isset($_POST['login'])){
             $_SESSION['email'] = $email;
             $_SESSION['usertype'] = $usertype;
             //echo 'loggedin!';
-            header('Location: dashboard.php');
+            header('Location: ./customer/home.php');
         } else {
             //if password a'int correct
             echo '<script type ="text/javascript">';
@@ -88,7 +104,7 @@ if (isset($_POST['login'])){
 <body id="indexpage">
     <div class="index">
         <div class="logo">
-            <img src="./img/logo.png" alt="">
+            <img src="./img/logo2.png" alt="">
         </div>
         <div class="formcontainer">
             <div class="buttoncontainer">
